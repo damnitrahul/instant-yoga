@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center">
           <p className="text-sm text-gray-600">
-            Created with 💜 by{' '}
+            Vibe coded with 💜 by{' '}
             <Link
               href="https://damnitrahul.com"
               className="font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"
