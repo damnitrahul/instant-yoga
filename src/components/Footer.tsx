@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-white/95 backdrop-blur-md border-t border-gray-100 mt-auto">
@@ -5,9 +7,12 @@ export default function Footer() {
         <div className="text-center">
           <p className="text-sm text-gray-600">
             Created with 💜 by{' '}
-            <span className="font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <Link
+              href="https://damnitrahul.com"
+              className="font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"
+            >
               damnitrahul
-            </span>
+            </Link>
           </p>
         </div>
       </div>

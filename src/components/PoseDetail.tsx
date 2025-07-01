@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import {Play} from 'lucide-react';
 import {YogaPose} from '../types/yoga';
 import {cn} from '../utils/helpers';
 
@@ -31,6 +32,17 @@ export default function PoseDetail({
       default:
         return cn(baseClasses, 'bg-gray-100 text-gray-700 border-gray-200');
     }
+  };
+
+  const getYouTubeSearchUrl = () => {
+    const query = `${pose.english_name} ${pose.sanskrit_name_adapted} yoga pose tutorial`;
+    return `https://www.youtube.com/results?search_query=${encodeURIComponent(
+      query
+    )}`;
+  };
+
+  const handleWatchVideo = () => {
+    window.open(getYouTubeSearchUrl(), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -84,6 +96,17 @@ export default function PoseDetail({
                 {category.name}
               </span>
             ))}
+          </div>
+
+          {/* Watch Video Button */}
+          <div className="mb-8">
+            <button
+              onClick={handleWatchVideo}
+              className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center gap-2"
+            >
+              <Play size={20} className="fill-current" />
+              <span className="text-base">Watch Video Tutorial on YouTube</span>
+            </button>
           </div>
 
           {/* Description */}
